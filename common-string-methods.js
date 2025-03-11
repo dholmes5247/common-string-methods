@@ -69,23 +69,26 @@ Complete the following tasks and assign the results to the specified variables. 
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+let hasJavaScript = inputString.includes("JavaScript"); // True
+let codingPosition = inputString.indexOf("coding"); // 15
+let startsWithWelcome = inputString.startsWith("Welcome"); // False (there are leading spaces, needs cleaned)
+let endsWithToday = inputString.endsWith("today"); // False (there are trailing spaces, needs cleaned)
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+let lowercaseString = inputString.toLowerCase(); // "  welcome to the coding bootcamp! learn javascript today.  "
+let uppercaseString =inputString.toUpperCase(); // "  WELCOME TO THE CODING BOOTCAMP! LEARN JAVASCRIPT TODAY.  "
+let trimmedString = inputString.trim(); // "Welcome to the Coding Bootcamp! Learn JavaScript today."
+let replacedString =inputString.replace("JavaScript", "coding"); // "  Welcome to the Coding Bootcamp! Learn coding today.  "
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray = inputString.split(" "); // [  '',       '',       'Welcome',  'to',     'the',    'Coding',  'Bootcamp!', 'Learn', 'JavaScript',  'today.',  '',       '']
+// the array has empty strings cause of the preceding and trailing spaces in the inputString better way would be to trim 1st then split
+// let wordsArray = inputString.trim().split(" "); // [ 'Welcome', 'to', 'the', 'Coding', 'Bootcamp!', 'Learn', 'JavaScript', 'today.' ]
 
 // 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+let firstCharacter = inputString.trim().charAt(0); // retrieves W after trimming
+let extractedBootcamp = inputString.trim().slice(22,31); // "Bootcamp" after trimmin spaces
+
 
 // Log all results
 console.log({
